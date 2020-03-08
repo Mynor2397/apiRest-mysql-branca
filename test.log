@@ -1,0 +1,162 @@
+2020/02/17 12:05:01 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 16:17:15 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 16:18:49 http: panic serving [::1]:64801: runtime error: invalid memory address or nil pointer dereference
+goroutine 35 [running]:
+net/http.(*conn).serve.func1(0xc00014a0a0)
+	c:/go/src/net/http/server.go:1767 +0x140
+panic(0x7f5ce0, 0xb7c500)
+	c:/go/src/runtime/panic.go:679 +0x1c0
+text/template.errRecover(0xc00006f480)
+	c:/go/src/text/template/exec.go:164 +0x1d2
+panic(0x7f5ce0, 0xb7c500)
+	c:/go/src/runtime/panic.go:679 +0x1c0
+text/template.(*Template).execute(0x0, 0x8f29c0, 0xc000146a80, 0x7eb5a0, 0xc0001462d0, 0x0, 0x0)
+	c:/go/src/text/template/exec.go:218 +0x1c8
+text/template.(*Template).Execute(...)
+	c:/go/src/text/template/exec.go:204
+github.com/Mynor2397/social-network/internal/service.buildQuery(0x88063e, 0x26f, 0xc0001462d0, 0x5, 0xc0001720c8, 0x8, 0x2030000, 0x2030000, 0x20, 0x8e6754)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/service/utl.go:31 +0xe2
+github.com/Mynor2397/social-network/internal/service.(*Service).Users(0xc000034fc0, 0x8fa0e0, 0xc000158140, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/service/user.go:263 +0x3e6
+github.com/Mynor2397/social-network/internal/handler.(*handler).users(0xc000006048, 0x8f9820, 0xc00016e000, 0xc00015c400)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/handler/user.go:121 +0x107
+net/http.HandlerFunc.ServeHTTP(0xc000035040, 0x8f9820, 0xc00016e000, 0xc00015c400)
+	c:/go/src/net/http/server.go:2007 +0x4b
+github.com/matryer/way.(*Router).ServeHTTP(0xc00005ced0, 0x8f9820, 0xc00016e000, 0xc00015c300)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/matryer/way/way.go:62 +0x2a0
+github.com/Mynor2397/social-network/internal/handler.(*handler).withAuth.func1(0x8f9820, 0xc00016e000, 0xc00015c300)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/handler/auth.go:57 +0x4bd
+net/http.HandlerFunc.ServeHTTP(0xc0000048a0, 0x8f9820, 0xc00016e000, 0xc00015c300)
+	c:/go/src/net/http/server.go:2007 +0x4b
+net/http.StripPrefix.func1(0x8f9820, 0xc00016e000, 0xc00015c200)
+	c:/go/src/net/http/server.go:2046 +0x191
+net/http.HandlerFunc.ServeHTTP(0xc00005cf60, 0x8f9820, 0xc00016e000, 0xc00015c200)
+	c:/go/src/net/http/server.go:2007 +0x4b
+github.com/matryer/way.(*Router).ServeHTTP(0xc00005cf30, 0x8f9820, 0xc00016e000, 0xc00015c100)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/matryer/way/way.go:62 +0x2a0
+net/http.serverHandler.ServeHTTP(0xc0000d6000, 0x8f9820, 0xc00016e000, 0xc00015c100)
+	c:/go/src/net/http/server.go:2802 +0xab
+net/http.(*conn).serve(0xc00014a0a0, 0x8fa0e0, 0xc000158080)
+	c:/go/src/net/http/server.go:1890 +0x87c
+created by net/http.(*Server).Serve
+	c:/go/src/net/http/server.go:2927 +0x395
+2020/02/17 16:18:49 users query: 
+		SELECT id, email, username, followers_count, followees_count 
+		
+		FROM user 
+		
+		 
+		
+		
+		
+		ORDER BY username ASC
+		LIMIT $1 
+args: [10]
+2020/02/17 16:18:49 No se pudo completar el query seleccionar usuarios: Error 1327: Undeclared variable: $1
+2020/02/17 16:26:05 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 16:26:26 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 22:54:47 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 23:22:25 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 23:24:01 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 23:26:43 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 23:29:14 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 23:34:48 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 23:35:31 Escuchando y sirviendo en el puerto: :4545
+2020/02/17 23:45:02 Escuchando y sirviendo en el puerto: :4545
+2020/02/21 15:14:38 Escuchando y sirviendo en el puerto: :4545
+2020/02/29 08:29:34 no se pudo iniciar el servidor: listen tcp :4545: bind: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+2020/03/01 22:27:45 http: panic serving 127.0.0.1:60775: runtime error: invalid memory address or nil pointer dereference
+goroutine 24 [running]:
+net/http.(*conn).serve.func1(0xc0001c21e0)
+	c:/go/src/net/http/server.go:1772 +0x140
+panic(0x7e4a80, 0xb6fd30)
+	c:/go/src/runtime/panic.go:973 +0x3a4
+text/template.errRecover(0xc000069448)
+	c:/go/src/text/template/exec.go:163 +0x1c9
+panic(0x7e4a80, 0xb6fd30)
+	c:/go/src/runtime/panic.go:967 +0x16b
+text/template.(*Template).execute(0x0, 0x8dd720, 0xc000184cf0, 0x7e2500, 0xc000184750, 0x0, 0x0)
+	c:/go/src/text/template/exec.go:217 +0x1a2
+text/template.(*Template).Execute(...)
+	c:/go/src/text/template/exec.go:203
+github.com/Mynor2397/social-network/internal/service.buildQuery(0x866a9c, 0x26f, 0xc000184750, 0x5, 0xc000190428, 0x436ef9, 0x86cc20, 0xc0001b2300, 0xc000069780, 0xc0000696a0)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/service/utl.go:31 +0xe2
+github.com/Mynor2397/social-network/internal/service.(*Service).Users(0xc000032fd0, 0x8e4aa0, 0xc000186380, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/service/user.go:263 +0x3f6
+github.com/Mynor2397/social-network/internal/handler.(*handler).users(0xc000006048, 0x8e4120, 0xc0001ae2a0, 0xc00019ad00)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/handler/user.go:127 +0x2dd
+net/http.HandlerFunc.ServeHTTP(0xc000033050, 0x8e4120, 0xc0001ae2a0, 0xc00019ad00)
+	c:/go/src/net/http/server.go:2012 +0x4b
+github.com/matryer/way.(*Router).ServeHTTP(0xc000056ed0, 0x8e4120, 0xc0001ae2a0, 0xc00019ac00)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/matryer/way/way.go:62 +0x297
+github.com/Mynor2397/social-network/internal/handler.(*handler).withAuth.func1(0x8e4120, 0xc0001ae2a0, 0xc00019ac00)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/handler/auth.go:66 +0x56d
+net/http.HandlerFunc.ServeHTTP(0xc0000048a0, 0x8e4120, 0xc0001ae2a0, 0xc00019ac00)
+	c:/go/src/net/http/server.go:2012 +0x4b
+net/http.StripPrefix.func1(0x8e4120, 0xc0001ae2a0, 0xc00019ab00)
+	c:/go/src/net/http/server.go:2051 +0x191
+net/http.HandlerFunc.ServeHTTP(0xc000056f60, 0x8e4120, 0xc0001ae2a0, 0xc00019ab00)
+	c:/go/src/net/http/server.go:2012 +0x4b
+github.com/matryer/way.(*Router).ServeHTTP(0xc000056f30, 0x8e4120, 0xc0001ae2a0, 0xc00019aa00)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/matryer/way/way.go:62 +0x297
+net/http.serverHandler.ServeHTTP(0xc00013c000, 0x8e4120, 0xc0001ae2a0, 0xc00019aa00)
+	c:/go/src/net/http/server.go:2807 +0xaa
+net/http.(*conn).serve(0xc0001c21e0, 0x8e4aa0, 0xc000186300)
+	c:/go/src/net/http/server.go:1895 +0x873
+created by net/http.(*Server).Serve
+	c:/go/src/net/http/server.go:2933 +0x363
+2020/03/01 22:27:45 users query: 
+		SELECT id, email, username, followers_count, followees_count 
+		
+		FROM user 
+		
+		 
+		
+		
+		
+		ORDER BY username ASC
+		LIMIT $1 
+args: [10]
+2020/03/01 22:27:49 No se pudo completar el query seleccionar usuarios: Error 1327: Undeclared variable: $1
+2020/03/02 18:52:34 http: panic serving 127.0.0.1:62975: runtime error: invalid memory address or nil pointer dereference
+goroutine 43 [running]:
+net/http.(*conn).serve.func1(0xc0001d8140)
+	c:/go/src/net/http/server.go:1772 +0x140
+panic(0x7e4a80, 0xb6fd30)
+	c:/go/src/runtime/panic.go:973 +0x3a4
+text/template.errRecover(0xc000067400)
+	c:/go/src/text/template/exec.go:163 +0x1c9
+panic(0x7e4a80, 0xb6fd30)
+	c:/go/src/runtime/panic.go:967 +0x16b
+text/template.(*Template).execute(0x0, 0x8dd880, 0xc000090f00, 0x7e2500, 0xc000090750, 0x0, 0x0)
+	c:/go/src/text/template/exec.go:217 +0x1a2
+text/template.(*Template).Execute(...)
+	c:/go/src/text/template/exec.go:203
+github.com/Mynor2397/social-network/internal/service.buildQuery(0x866afc, 0x26f, 0xc000090750, 0x5, 0xc0000de0c8, 0xc000080000, 0x14807b0, 0x0, 0xc0000676c8, 0xc000067658)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/service/utl.go:31 +0xe2
+github.com/Mynor2397/social-network/internal/service.(*Service).Users(0xc000030fd0, 0x8e4cc0, 0xc0000906c0, 0xc0000ac06f, 0x0, 0x0, 0xc0000ac07e, 0x0, 0x0, 0x0, ...)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/service/user.go:263 +0x3f6
+github.com/Mynor2397/social-network/internal/handler.(*handler).users(0xc000006048, 0x8e4280, 0xc0000b40e0, 0xc0000a4800)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/handler/user.go:127 +0x2dd
+net/http.HandlerFunc.ServeHTTP(0xc000031050, 0x8e4280, 0xc0000b40e0, 0xc0000a4800)
+	c:/go/src/net/http/server.go:2012 +0x4b
+github.com/matryer/way.(*Router).ServeHTTP(0xc000054ed0, 0x8e4280, 0xc0000b40e0, 0xc0000a4700)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/matryer/way/way.go:62 +0x297
+github.com/Mynor2397/social-network/internal/handler.(*handler).withAuth.func1(0x8e4280, 0xc0000b40e0, 0xc0000a4600)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/Mynor2397/social-network/internal/handler/auth.go:81 +0x63d
+net/http.HandlerFunc.ServeHTTP(0xc0000048a0, 0x8e4280, 0xc0000b40e0, 0xc0000a4600)
+	c:/go/src/net/http/server.go:2012 +0x4b
+net/http.StripPrefix.func1(0x8e4280, 0xc0000b40e0, 0xc0000a4500)
+	c:/go/src/net/http/server.go:2051 +0x191
+net/http.HandlerFunc.ServeHTTP(0xc000054f60, 0x8e4280, 0xc0000b40e0, 0xc0000a4500)
+	c:/go/src/net/http/server.go:2012 +0x4b
+github.com/matryer/way.(*Router).ServeHTTP(0xc000054f30, 0x8e4280, 0xc0000b40e0, 0xc0000a4400)
+	C:/Users/marol/Documents/ProjectsGolang/src/github.com/matryer/way/way.go:62 +0x297
+net/http.serverHandler.ServeHTTP(0xc00013c000, 0x8e4280, 0xc0000b40e0, 0xc0000a4400)
+	c:/go/src/net/http/server.go:2807 +0xaa
+net/http.(*conn).serve(0xc0001d8140, 0x8e4c00, 0xc000098280)
+	c:/go/src/net/http/server.go:1895 +0x873
+created by net/http.(*Server).Serve
+	c:/go/src/net/http/server.go:2933 +0x363
+2020/03/04 22:57:21 http: superfluous response.WriteHeader call from github.com/matryer/way.(*Router).ServeHTTP (way.go:66)
+2020/03/05 20:00:24 no se pudo iniciar el servidor: listen tcp :4545: bind: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)

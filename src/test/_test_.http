@@ -1,0 +1,78 @@
+@host=http://localhost:4545
+
+
+POST http://localhost:4545/api/users
+Content-Type: application/json
+
+{
+    "email":"ter@gmail.com",
+    "username":"Teresa12",
+    "password":"123456"
+}
+
+
+###
+# @name login
+POST {{host}}/api/login
+Content-Type: application/json
+
+{
+    "email":"bryancarias@gmail.com",
+    "password":"qwertyuio"
+}
+
+
+###
+# @name login
+POST {{host}}/api/login
+Content-Type: application/json
+
+{
+    "email":"rous10@gmail.com",
+    "password":"Miprincipe"
+}
+
+
+##TEre
+###
+# @name login
+POST {{host}}/api/login
+Content-Type: application/json
+
+{
+    "email":"ter@gmail.com",
+    "password":"123456"
+}
+
+###
+GET {{host}}/api/auth_user
+Authorization: Bearer 1LOKU7IruuYqqaBlcKQBqrOHyD8fOyDD2dww288Hi2XZY0OU8YI6MpLDxUYHOkYR
+
+###
+GET {{host}}/api/auth_user
+Authorization: Bearer KCBCWNZJb3WxeOuBatQCavqcgR3x65NBQK3Q54gbWUcyOedVwa3rjM8VZJVksY
+
+
+### for followers
+GET  {{host}}/api/users/Teresa12
+Authorization: Bearer 1LOKU7IruuYqqaBlcKQBqrOHyD8fOyDD2dww288Hi2XZY0OU8YI6MpLDxUYHOkYR
+
+
+### for followers
+GET  {{host}}/api/users/bryanc
+Authorization:Bearer 1LOKSUDiYnhpuyoO92rgEZTCjUC9Bu3PHsG8oS971ELf4Q9kRCgBSqBoD9fXltrm
+
+
+
+### para ver los usuarios
+GET  {{host}}/api/users?search=&first=&after=
+Authorization: Bearer 
+
+###
+GET {{host}}/api/auth_user
+Authorization:Bearer 
+
+
+###
+POST  {{host}}/api/users/Teresa12/toggle_follow
+Authorization:Bearer 1LOKSUDiYnhpuyoO92rgEZTCjUC9Bu3PHsG8oS971ELf4Q9kRCgBSqBoD9fXltrm
