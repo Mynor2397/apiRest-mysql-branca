@@ -1,4 +1,4 @@
-package handler
+package handlers
 
 import (
 	"encoding/json"
@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 )
-
 
 func respond(w http.ResponseWriter, v interface{}, statuscode int) {
 	b, err := json.Marshal(v)
